@@ -14,16 +14,24 @@ public class TransferEncoder extends ProtocolEncoderAdapter {
         buffer.setAutoExpand(true);
         // 写入类型
         String type = model.getType().name();
-        buffer.putInt(type.length());
-        buffer.put(type.getBytes());
+        byte[] tBytes = type.getBytes();
+        buffer.putInt(tBytes.length);
+        buffer.put(tBytes);
         // 写入路径
         String path = model.getPath();
-        buffer.putInt(path.length());
-        buffer.put(path.getBytes());
+        if (path == null) {
+            buffer.putInt(0);
+            buffer.put(new byte[]{});
+        } else {
+            byte[] pBytes = path.getBytes();
+            buffer.putInt(pBytes.length);
+            buffer.put(pBytes);
+        }
         // 写入内容
         byte[] body = model.getBody();
         if (body == null) {
             buffer.putInt(0);
+            buffer.put(new byte[]{});
         } else {
             buffer.putInt(body.length);
             buffer.put(body);

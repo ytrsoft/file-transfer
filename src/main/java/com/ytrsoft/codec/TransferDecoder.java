@@ -31,14 +31,5 @@ public class TransferDecoder extends CumulativeProtocolDecoder {
         return true;
     }
 
-    private byte[] read(IoBuffer in) {
-        int size = in.getInt();
-        byte[] bytes = new byte[size];
-        if (size != 0) {
-            in.flip();
-            in.get(bytes);
-        }
-        return bytes;
-    }
 }
 

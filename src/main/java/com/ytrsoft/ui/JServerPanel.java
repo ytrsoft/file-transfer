@@ -16,6 +16,7 @@ public class JServerPanel extends JModePanel<BootModel> implements ActionListene
         void onBoot(BootModel model);
     }
 
+    private boolean isLock;
     private final JButton startBtn;
     private final JButton selectBtn;
     private final BootListener bootListener;
@@ -141,26 +142,32 @@ public class JServerPanel extends JModePanel<BootModel> implements ActionListene
             directoryChooser.open();
         }
         if (e.getSource().equals(startBtn)) {
-            Integer host1 = (Integer) hostComboBox1.getSelectedItem();
-            Integer host2 = (Integer) hostComboBox2.getSelectedItem();
-            Integer host3 = (Integer) hostComboBox3.getSelectedItem();
-            Integer host4 = (Integer) hostComboBox4.getSelectedItem();
-            getModel().setHost(String.format("%d.%d.%d.%d", host1, host2, host3, host4));
-            Integer interval = (Integer) intervalComboBox.getSelectedItem();
-            getModel().setInterval((long) (interval == null ? 0 : interval));
-            Integer port = (Integer) portComboBox.getSelectedItem();
-            getModel().setPort(port);
-            if (getModel().getPath() != null) {
-                bootListener.onBoot(getModel());
-                hostComboBox1.setEnabled(false);
-                hostComboBox2.setEnabled(false);
-                hostComboBox3.setEnabled(false);
-                hostComboBox4.setEnabled(false);
-                intervalComboBox.setEnabled(false);
-                portComboBox.setEnabled(false);
-                selectBtn.setEnabled(false);
-                startBtn.setEnabled(false);
+            if (!isLock) {
+                Integer host1 = (Integer) hostComboBox1.getSelectedItem();
+                Integer host2 = (Integer) hostComboBox2.getSelectedItem();
+                Integer host3 = (Integer) hostComboBox3.getSelectedItem();
+                Integer host4 = (Integer) hostComboBox4.getSelectedItem();
+                getModel().setHost(String.format("%d.%d.%d.%d", host1, host2, host3, host4));
+                Integer interval = (Integer) intervalComboBox.getSelectedItem();
+                getModel().setInterval((long) (interval == null ? 0 : interval));
+                Integer port = (Integer) portComboBox.getSelectedItem();
+                getModel().setPort(port);
+                if (getModel().getPath() != null) {
+                    isLock = true;
+                    bootListener.onBoot(getModel());
+                    hostComboBox1.setEnabled(false);
+                    hostComboBox2.setEnabled(false);
+                    hostComboBox3.setEnabled(false);
+                    hostComboBox4.setEnabled(false);
+                    intervalComboBox.setEnabled(false);
+                    portComboBox.setEnabled(false);
+                    selectBtn.setEnabled(false);
+                    startBtn.setText("stop");
+                }
             }
+        } else {
+            isLock = false;
+            System.exit(0);
         }
     }
 
