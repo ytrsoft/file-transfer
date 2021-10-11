@@ -16,7 +16,7 @@ public class JServerPanel extends JModePanel<BootModel> implements ActionListene
         void onBoot(BootModel model);
     }
 
-    private boolean isLock;
+    private boolean isLock = false;
     private final JButton startBtn;
     private final JButton selectBtn;
     private final BootListener bootListener;
@@ -166,7 +166,6 @@ public class JServerPanel extends JModePanel<BootModel> implements ActionListene
                 }
             }
         } else {
-            isLock = false;
             System.exit(0);
         }
     }
