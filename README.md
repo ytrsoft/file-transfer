@@ -1,2 +1,2 @@
 # file-transfer
-file transfer in socket
+file transfer in socket.
