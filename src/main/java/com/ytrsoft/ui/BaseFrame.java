@@ -3,7 +3,7 @@ package com.ytrsoft.ui;
 import com.github.weisj.darklaf.LafManager;
 import com.github.weisj.darklaf.theme.DarculaTheme;
 import com.github.weisj.darklaf.theme.Theme;
-import com.ytrsoft.entity.BootModel;
+import com.ytrsoft.model.BootModel;
 
 import javax.swing.*;
 

@@ -1,7 +1,7 @@
 package com.ytrsoft;
 
 import com.ytrsoft.codec.TransferCodecFactory;
-import com.ytrsoft.entity.BootModel;
+import com.ytrsoft.model.BootModel;
 import com.ytrsoft.handler.ClientHandler;
 import com.ytrsoft.ui.BaseClient;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;

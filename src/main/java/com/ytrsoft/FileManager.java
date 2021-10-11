@@ -1,7 +1,7 @@
 package com.ytrsoft;
 
-import com.ytrsoft.entity.TransferModel;
-import com.ytrsoft.entity.TransferType;
+import com.ytrsoft.model.TransferModel;
+import com.ytrsoft.model.TransferType;
 import com.ytrsoft.handler.ServerHandler;
 import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
 import org.apache.commons.io.monitor.FileAlterationMonitor;

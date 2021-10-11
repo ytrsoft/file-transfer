@@ -1,6 +1,6 @@
 package com.ytrsoft.codec;
 
-import com.ytrsoft.entity.TransferModel;
+import com.ytrsoft.model.TransferModel;
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolEncoderAdapter;

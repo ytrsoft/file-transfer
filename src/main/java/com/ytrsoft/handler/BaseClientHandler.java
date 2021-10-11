@@ -1,6 +1,6 @@
 package com.ytrsoft.handler;
 
-import com.ytrsoft.entity.TransferModel;
+import com.ytrsoft.model.TransferModel;
 import com.ytrsoft.util.FileKit;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;

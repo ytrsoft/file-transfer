@@ -1,6 +1,6 @@
 package com.ytrsoft.ui;
 
-import com.ytrsoft.entity.BootModel;
+import com.ytrsoft.model.BootModel;
 
 import javax.swing.*;
 

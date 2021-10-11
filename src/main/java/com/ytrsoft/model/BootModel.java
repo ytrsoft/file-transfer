@@ -1,4 +1,4 @@
-package com.ytrsoft.entity;
+package com.ytrsoft.model;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package com.ytrsoft.codec;
 
-import com.ytrsoft.entity.TransferModel;
-import com.ytrsoft.entity.TransferType;
+import com.ytrsoft.model.TransferModel;
+import com.ytrsoft.model.TransferType;
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.CumulativeProtocolDecoder;
@@ -21,11 +21,13 @@ public class TransferDecoder extends CumulativeProtocolDecoder {
         // 读取路径
         int pLen = in.getInt();
         byte[] pBytes = new byte[pLen];
+        in.get(pBytes);
         String path = new String(pBytes);
         model.setPath(path);
         // 读取主体
         int bLen = in.getInt();
         byte[] body = new byte[bLen];
+        in.get(body);
         model.setBody(body);
         out.write(model);
         return true;

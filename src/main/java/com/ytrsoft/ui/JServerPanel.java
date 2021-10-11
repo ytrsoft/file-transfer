@@ -3,7 +3,7 @@ package com.ytrsoft.ui;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
-import com.ytrsoft.entity.BootModel;
+import com.ytrsoft.model.BootModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

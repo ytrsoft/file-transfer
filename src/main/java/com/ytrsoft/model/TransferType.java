@@ -1,4 +1,4 @@
-package com.ytrsoft.entity;
+package com.ytrsoft.model;
 
 public enum TransferType {
     FILE_SAVE,
