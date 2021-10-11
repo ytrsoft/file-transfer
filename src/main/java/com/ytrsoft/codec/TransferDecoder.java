@@ -27,10 +27,12 @@ public class TransferDecoder extends CumulativeProtocolDecoder {
         // 读取主体
         int bLen = in.getInt();
         byte[] body = new byte[bLen];
-        in.get(body);
+        if (bLen > 0) {
+            in.get(body);
+        }
         model.setBody(body);
         out.write(model);
-        return true;
+        return false;
     }
 
 }
