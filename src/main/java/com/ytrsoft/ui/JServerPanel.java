@@ -165,8 +165,9 @@ public class JServerPanel extends JModePanel<BootModel> implements ActionListene
                     startBtn.setText("stop");
                 }
             }
-        } else {
-            System.exit(0);
+            else {
+                System.exit(0);
+            }
         }
     }
 

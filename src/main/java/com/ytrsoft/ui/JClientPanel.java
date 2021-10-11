@@ -146,9 +146,9 @@ public class JClientPanel extends JModePanel<BootModel> implements ActionListene
                     selectBtn.setEnabled(false);
                     startBtn.setText("stop");
                 }
+            } else {
+                System.exit(0);
             }
-        } else {
-            System.exit(0);
         }
     }
 }
