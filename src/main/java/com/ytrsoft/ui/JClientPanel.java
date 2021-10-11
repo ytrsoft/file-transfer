@@ -76,7 +76,7 @@ public class JClientPanel extends JModePanel<BootModel> implements ActionListene
 
     private JComboBox<Integer> getPortSelect() {
         JComboBox<Integer> jComboBox = new JComboBox<>();
-        for (int i = 8080; i <= 9999; i++) {
+        for (int i = 5001; i <= 9999; i++) {
             jComboBox.addItem(i);
         }
         return jComboBox;
